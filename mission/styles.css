@@ -1,7 +1,8 @@
-.dark{
+.dark {
     background-color: #333;
     color: white;
 }
+
 .dark .content .title h2 {
     color: #A0D4ED;
 }
@@ -51,8 +52,6 @@ main {
 .list li {
     padding-bottom: 20px;
 }
-
-footer {}
 
 .logo {
     width: 150px;
