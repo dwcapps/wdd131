@@ -98,13 +98,14 @@ footer {
     color: white;
     padding: 15px;
 }
+
 footer p {
     max-width: 1000px;
     margin: 0 auto;
 }
 
 .hide {
-	display: none;
+    display: none;
 }
 
 .viewer {
@@ -117,10 +118,11 @@ footer p {
     display: grid;
     grid-template-rows: auto 1fr;
     z-index: 10;
- 
+
     justify-items: center;
     padding: 10px;
 }
+
 .close-viewer {
     all: unset;
     grid-row: 1;
@@ -140,8 +142,10 @@ footer p {
     grid-row: 2;
     padding: 0px;
     margin: 0px;
+    object-fit: contain;
+    overflow: hidden;
 }
-    
+
 
 @media screen and (min-width: 700px) {
     .gallery {
@@ -168,8 +172,4 @@ footer p {
         padding: 50px;
 
     }
-    .viewer img {
-        
-    }
-
 }

@@ -1,10 +1,10 @@
 const menu_button = document.getElementById("menu");
 
-menu_button.addEventListener("click", function() {
+menu_button.addEventListener("click", function () {
     document.getElementById("nav-links").classList.toggle("hide");
 });
 
-function handleResize () {
+function handleResize() {
     if (window.innerWidth > 1000) {
         document.getElementById("menu").classList.add("hide");
         document.getElementById("nav-links").classList.remove("hide");
@@ -22,7 +22,7 @@ function viewerTemplate(pic, alt) {
       <button class="close-viewer">X</button>
       <img src="${pic}" alt="${alt}">
       </div>`;
-  }
+}
 
 function viewHandler(event) {
     if (event.target.nodeName === "IMG") {
@@ -32,7 +32,7 @@ function viewHandler(event) {
         document.querySelector("body").insertAdjacentHTML("afterbegin", viewerTemplate(newpic, alt));
 
         const closeViewer = document.querySelector(".close-viewer");
-        closeViewer.addEventListener("click", function() {document.querySelector(".viewer").remove();});
+        closeViewer.addEventListener("click", function () { document.querySelector(".viewer").remove(); });
     }
 }
 
