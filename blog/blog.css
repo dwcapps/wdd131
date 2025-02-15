@@ -20,7 +20,6 @@
 
 body {
     font-family: var(--body_font);
-    background-color: var(--cream);
     color: var(--dark_green);
 }
 
@@ -30,6 +29,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1 {
     font-size: 60px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    color: black;
 }
 h2 {
     font-size: 40px;
@@ -37,6 +39,11 @@ h2 {
 h3 {
     font-size: 24px;
     color: var(--dark_green);
+    font-family: var(--body_font);
+}
+
+header {
+    margin-bottom: 30px;
 }
 
 header h1{
@@ -44,10 +51,10 @@ header h1{
 }
 
 header nav{
-    border-top: 2px var(--light_brown) solid;
-    border-bottom: 2px var(--light_brown) solid;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    border-top: 2px var(--light_green) solid;
+    border-bottom: 2px var(--light_green) solid;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 nav ul{
@@ -57,46 +64,64 @@ nav ul{
     list-style: none;
     justify-content: end;
     justify-items: end;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 li a{
     font-size: 24px;
+    color: var(--dark_brown);
 }
 
 #maincontent {
     display: grid;
-    grid-template-columns: 1300px auto;
-    row-gap: 20px;
+    grid-template-columns: auto 200px;
+    grid-template-rows: auto auto;
+    row-gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .book-listing {
     grid-column: 1;
     display: grid;
     grid-template-columns: 250px 1fr;
+    margin-right: 30px;
 }
 
 .info-box {
     grid-column: 1;
     grid-row: 1;
     padding-top: 10px;
+    text-align: right;
+    border-right: 2px var(--light_green) solid;
+    padding-right: 15px;
+    margin-right: 15px;
 }
 
 .info-box p {
-    padding-top: 10px;
+    padding-top: 7px;
 }
 
 .article-body {
     grid-column: 2;
 }
 
+.article-body .title {
+    margin-top: -8px;
+}
+
 .article-body img {
     padding: 20px;
+    display: block;
+    margin: auto;
+    
 }
 
 .filters {
     grid-column: 2;
-    grid-row: 1;
+    grid-row: 1/-1;
+    border: 2px var(--light_green) solid;
+
 }
 
 .skiptocontent a{
