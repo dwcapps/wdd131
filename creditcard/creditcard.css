@@ -1,0 +1,122 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 80px 250px 80px;
+    grid-template-rows: 25px 190px 25px 35px;
+    gap: 20px;
+}
+    
+    
+#front, #back {
+    height: 230px;
+    width: 350px;
+    background-color: #dcdcdc;
+    box-shadow: 2px 2px 2px 2px grey;
+    border-radius: 5px;
+}
+
+#front {
+    grid-column: 1/3;
+    grid-row: 1/3;
+    z-index: 1;
+    display:grid;
+    gap: 15px;
+    grid-template-columns: 185px auto;
+    grid-template-rows: 1fr min-content+5px min-content+5px;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+}
+input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    align-self: stretch;
+}
+
+#total {
+    justify-self: start;
+    align-self: center;
+    white-space: pre;
+}
+
+.card-image {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    justify-self: end;
+    align-self: center;
+}
+
+#card-number-container {
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+
+#expiration-container {
+    display: grid;
+    grid-template-rows: min-content auto;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    padding: 0px;
+    margin: 0px;
+
+}
+#expiration-container label {
+    grid-column: 1/3;
+}
+#month {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    width: 100%;
+    box-sizing: border-box;
+}
+#year {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    width: 100%;
+}
+
+
+#back {
+    grid-column: 2/4;
+    grid-row: 2/4;
+    display: grid;
+    grid-template-columns: 260px 90px;
+    grid-template-rows: 90px 110px;
+    padding: 15px 0px;
+    box-sizing: border-box;
+}
+
+#strip{
+    box-shadow: none;
+    border-radius: 0px;
+    background-color: #434343;
+    height: 40px;
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+
+#cvc-container {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    padding-bottom: 15px;
+    justify-self: start;
+    align-self: end;
+}
+
+#cvc {
+    width: 60px;
+}
+
+button {
+    padding: 5px 10px;
+    position: absolute;
+    top: 295px;
+    left: 395px
+}
