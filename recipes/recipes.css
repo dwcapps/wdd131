@@ -85,6 +85,11 @@ img {
 
 }
 
+.tag-container {
+    display: flex;
+    gap: 5px;
+}
+
 .tags {
     display: inline-block;
     width: auto;
@@ -174,7 +179,7 @@ footer {
 
 @media screen and (min-width: 960px) {
     .recipe img{
-        width: 50%;
+        width: 30%;
 
     }
 }
