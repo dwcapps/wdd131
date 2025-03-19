@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+:root {
+--primary-color: #1B98E0;
+--secondary-color: #59c3c3;
+--text-dark: #333;
+--text-light: #ebebeb;
+--primary-font: Arial, Helvetica,sans-serif;
+--secondary-font: "Schoolbell";
+}
+
+body {
+    font-family: var(--primary-font);
+    margin: 20px;
+    color: var(--text-dark)
+}
+
+img {
+	max-width: 100%;
+}
+
+.logo{
+    font-family: var(--secondary-font);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 40px;
+}
+
+.logo img{
+    width: 80px;
+}
+
+.logo h1{
+    margin: 0;
+    font-size: 40px;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+}
+
+.search-form input{
+    font-size: 24px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.search-form button{
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+    background: none;
+    border: 1px solid black;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#border-line {
+    border-bottom: 2px solid lightgray;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.recipe {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.recipe-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+
+}
+
+.tags {
+    display: inline-block;
+    width: auto;
+    border: 2px solid black;
+    padding: 5px;
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+.name {
+    font-family: var(--secondary-font);
+    color: var(--primary-color);
+    margin-bottom: 0px;
+    text-transform: uppercase;
+    display: inline;
+}
+
+.description {
+    width: 100%;
+    display: none;
+}
+
+.rating {
+    margin: 0px;
+    padding: 0px;
+    gap: 0px;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+    font-size: 18px;
+}
+
+.rating span {
+    margin: 0px;
+    padding: 0px;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+
+}
+
+footer {
+    text-align: center;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 40px;
+}
+
+.social img{
+    width: 40px;
+}
+
+
+#icon_attribution {
+    text-align: left;
+    font-size: 0.8em;
+    text-decoration: none;
+    width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+    .recipe{
+        flex-direction: row;
+    }
+    .recipe img{
+        width: 50%;
+        height: fit-content;
+    }
+    .description{
+        display: block;
+    }
+    footer {
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .social {
+        order: 1;
+        margin: 0;
+        justify-content: flex-end;
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .recipe img{
+        width: 50%;
+
+    }
+}
