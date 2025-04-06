@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+        <meta description="A simple calculator website">
+        <meta author="Daniel Capps">
+        <link rel="stylesheet" href="styles/calculator.css">
+        <script src="main.js" type="module" defer></script>
+        <meta property="og:title" content="Calculator">
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="A simple calculator website">
+        <meta property="og:url" content="https://dwcapps.github.io/wdd131/calculator">
+        <meta name="twitter:card" content="summary_large_image">
+    </head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="Calculator Tools logo" class="logo" />
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Interactive Calculator</a></li>
+                <li><a href="conversions.html">Basic Conversions</a></li>
+            </ul>
+        </nav>
+    </header>
+      
+      
+    <main>
+        <section class="calculator">
+            <h2>Interactive Calculator</h2>
+            
+            <div id="display" aria-label="Calculator display" role="textbox" tabindex="0">
+              0
+            </div>
+          
+            <div class="button-grid">
+              <!-- Row 1 -->
+              <button data-value="+">+</button>
+              <button data-value="-">-</button>
+              <button data-value="*">×</button>
+              <button data-value="/">÷</button>
+          
+              <!-- Row 2 -->
+              <button data-value="7">7</button>
+              <button data-value="8">8</button>
+              <button data-value="9">9</button>
+              <button id="backspace">←</button>
+          
+              <!-- Row 3 -->
+              <button data-value="4">4</button>
+              <button data-value="5">5</button>
+              <button data-value="6">6</button>
+              <button id="clear">C</button>
+          
+              <!-- Row 4 -->
+              <button data-value="1">1</button>
+              <button data-value="2">2</button>
+              <button data-value="3">3</button>
+
+              <!-- Row 5 -->
+              <button id="negate">±</button>
+              <button id="zero" data-value="0">0</button>
+              <button data-value=".">.</button>
+              <button id="equals">=</button>
+            </div>
+        </section>         
+        
+        <section class="site-info">
+            <h2>About This Website</h2>
+                <p>
+                    This section will contain an overview of the calculator's
+                    features, a short explanation of how it was built and
+                    screenshots of the code. It's intended to demonstrate
+                    thoughtful development and user-centered design.
+                </p>
+            <img src="images/logo.png" alt="Screenshot of calculator JavaScript code" />
+        </section>
+          
+    </main>
+    <footer>
+        <p>&copy; 2025 Daniel Capps. Built for WDD 131 Final Project.</p>
+    </footer>
+</body>
+</html>
