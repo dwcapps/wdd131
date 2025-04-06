@@ -1,42 +1,66 @@
-let currentInput = [];
+import { evaluateExpression, isNumber } from './utils.js';
 
+
+let currentInput = [];
 const display = document.getElementById('display');
 
 function handleButtonPress(value) {
+    // Block input if the display is full
+    const displayString = currentInput.join('');
+    if (displayString.length >= 22) {
+        return;
+    }
+
+    // If the input list is empty and the value is an integer, add it.
+    if (currentInput.length === 0 && isNumber(value) && value !== '.') {
+        currentInput.push(value);
+        updateDisplay(currentInput.join(''));
+        return;
+    }
+
     const last = currentInput[currentInput.length - 1];
-    if (isNumber(value)) {
+    const opperands = ['+', '-', '/', '*']
+    // If the last list element would still be a valid single number when you
+    // add the new element, concat them.
+    if (isNumber(last + value) && last !== '-') {
         currentInput[currentInput.length - 1] += value;
     }
-    currentInput.push(value);
-    updateDisplay(currentInput);
-}
-
-function isNumber(value) {
-
+    // If the decimal wasn't valid in the last check, don't add it at all.
+    else if (value === '.') {
+        return
+    }
+    // Don't allow two opperands back to back.
+    else if (opperands.includes(last) && opperands.includes(value)) {
+        return
+    }
+    else {
+        currentInput.push(value);
+    }
+    updateDisplay(currentInput.join(''));
 }
 
 function handleEquals() {
-    const result = evaluateExpression(currentInput.join(''));
+    const result = evaluateExpression(currentInput);
+    if (result == null) {
+        return //Expression was invalid, do nothing.
+    }
     currentInput = [];
-    currentInput.push(value);
+    currentInput.push(result.toString());
     updateDisplay(result);
 }
 
-function evaluateExpression(expr) {
-    try {
-        return eval(expr);
-    } catch (e) {
-        return expr; //Do nothing if expression is invalid
-    }
-}
-
-function clearDisplay() {
+function handleClear() {
     currentInput = [];
     updateDisplay('0');
 }
 
 function handleBackspace() {
-    currentInput.pop();
+    if (currentInput[currentInput.length - 1].length === 1) {
+        currentInput.pop();
+    }
+    else {
+        currentInput[currentInput.length - 1] = currentInput[currentInput.length - 1].slice(0, -1);
+    }
     if (currentInput) {
         updateDisplay(currentInput.join(''));
     } else {
@@ -45,37 +69,47 @@ function handleBackspace() {
 }
 
 function handleNegate() {
-    if (!currentInput || currentInput == "0") return;
-
-    // If last number is already negative, remove the minus
-    const lastNumberMatch = currentInput.match(/-?\d+(\.\d+)?$/);
-    if (!lastNumberMatch) return;
-
-    const number = lastNumberMatch[0];
-    const negated = number.startsWith('-') ? number.slice(1) : '-' + number;
-
-    currentInput = currentInput.slice(0, -number.length) + negated;
-    updateDisplay(currentInput);
+    // Iterate backwards through the list and negate the first number seen
+    for (let i = currentInput.length - 1; i >= 0; i--) {
+        const token = currentInput[i];
+        if (isNumber(token)) {
+            const flipped = (-parseFloat(token)).toString();
+            currentInput[i] = flipped;
+            updateDisplay(currentInput.join(''));
+            return;
+        }
+    }
 }
 
 function updateDisplay(value) {
+    console.log(currentInput)
     display.textContent = value;
 }
 
-document.querySelectorAll('.button-grid button').forEach(button => {
-    const value = button.dataset.value;
+function init() {
+    document.querySelectorAll('.button-grid button').forEach(button => {
+        const value = button.dataset.value;
 
-    button.addEventListener('click', () => {
-        if (value) {
-        handleButtonPress(value);
-        } else if (button.id === 'equals') {
-        handleEquals();
-        } else if (button.id === 'clear') {
-        clearDisplay();
-        } else if (button.id === 'backspace') {
-        handleBackspace();
-        } else if (button.id === 'negate') {
-        handleNegate();
-        }
+        button.addEventListener('click', () => {
+            // If the display contains any letters anywhere, clear it. 
+            if (currentInput.some(token => [...token].some(char => (char.toLowerCase() >= 'a' && char.toLowerCase() <= 'z')))) {
+                currentInput = [];
+                updateDisplay('0');
+            }
+
+            if (value) {
+                handleButtonPress(value);
+            } else if (button.id === 'equals') {
+                handleEquals();
+            } else if (button.id === 'clear') {
+                handleClear();
+            } else if (button.id === 'backspace') {
+                handleBackspace();
+            } else if (button.id === 'negate') {
+                handleNegate();
+            }
+        });
     });
-});
+}
+
+init();

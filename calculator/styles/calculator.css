@@ -50,6 +50,8 @@ header {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 .logo {
@@ -84,8 +86,8 @@ header {
 /*   MAIN   */
 
 main {
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 200px;
+  margin-right: 200px;
 }
 
 .calculator {
@@ -166,15 +168,63 @@ main {
   background-color: #bb6f0b;
 }
 
+/*Site Info*/
 .site-info {
   display: flex;
-  width: 500px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-items: flex-end;
+  width: 680px;
   margin: auto;
-}
-.site-info h2{
-  font-size: 26px;
+  gap: 20px;
 }
 
+.site-info h2{
+  font-size: 32px;
+  margin-bottom: 0px;
+  width: 100%;
+}
+
+.site-info img{
+  display: inline-block;
+  border-radius: 10px;
+  border: 2px solid #bb6f0b;
+  margin: 0;
+  padding: 0;
+}
+
+.site-info p{
+  background-color: #67aee4;
+  color: white;
+  font-family: var(--paragraph-font);
+  font-size: 18px;
+  padding: 1em;
+  border-radius: 10px;
+  height: min-content;
+  margin: 0;
+}
+
+#p1 {
+  width: 200px;
+}
+#p2 {
+  margin-top: -210px;
+  width: 200px;
+}
+#p3 {
+  width: 368px;
+  margin-left: auto;
+}
+
+#code_img {
+  width: 400px;
+  margin-left: auto;
+}
+#bug_img {
+  margin-left: auto;
+  flex-basis: 100%;
+}
 
 /*   FOOTER   */
 
@@ -186,4 +236,96 @@ footer {
   margin-top: 3em;
   font-family: var(--paragraph-font);
 }
-  
+
+
+/*   SUB PAGE   */
+#main2{
+  margin-bottom: 300px;
+}
+.converter{
+  font-size: 32px;
+  font-family: var(--paragraph-font);
+}
+.converter input{
+  font-size: 32px;
+  font-family: var(--paragraph-font);
+}
+.converter h2{
+  margin-bottom: 0px;
+}
+
+
+
+@media (max-width: 770px) {
+  main {
+    margin: 1em;
+  }
+
+  .navbar {
+    flex-direction: column;
+    margin: 0;
+    gap: 1em;
+    align-items: flex-start;
+    justify-content: center;
+    justify-items: center;
+
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 20px;
+    padding: 0.8em;
+  }
+
+  .calculator {
+    max-width: 100%;
+    padding: 1em;
+  }
+
+  #display {
+    font-size: 1.5em;
+    padding: 0.4em;
+  }
+
+  .button-grid {
+    gap: 0.4em;
+  }
+
+  .button-grid button {
+    font-size: 1.4em;
+    padding: 0.5em;
+  }
+
+  .site-info {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .site-info p,
+  .site-info img {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  #p2 {
+    margin-top: 0;
+  }
+
+  #p3 {
+    margin-left: 0;
+  }
+
+  #bug_img {
+    margin-left: 0;
+  }
+
+  footer {
+    text-align: center;
+  }
+}

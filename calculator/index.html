@@ -33,34 +33,29 @@
             <h2>Interactive Calculator</h2>
             
             <div id="display" aria-label="Calculator display" role="textbox" tabindex="0">
-              0
+            0
             </div>
           
             <div class="button-grid">
-              <!-- Row 1 -->
               <button data-value="+">+</button>
               <button data-value="-">-</button>
               <button data-value="*">×</button>
               <button data-value="/">÷</button>
           
-              <!-- Row 2 -->
               <button data-value="7">7</button>
               <button data-value="8">8</button>
               <button data-value="9">9</button>
               <button id="backspace">←</button>
           
-              <!-- Row 3 -->
               <button data-value="4">4</button>
               <button data-value="5">5</button>
               <button data-value="6">6</button>
               <button id="clear">C</button>
           
-              <!-- Row 4 -->
               <button data-value="1">1</button>
               <button data-value="2">2</button>
               <button data-value="3">3</button>
 
-              <!-- Row 5 -->
               <button id="negate">±</button>
               <button id="zero" data-value="0">0</button>
               <button data-value=".">.</button>
@@ -70,13 +65,26 @@
         
         <section class="site-info">
             <h2>About This Website</h2>
-                <p>
-                    This section will contain an overview of the calculator's
-                    features, a short explanation of how it was built and
-                    screenshots of the code. It's intended to demonstrate
-                    thoughtful development and user-centered design.
+                <p id="p1">
+                    This basic calculator was created as part of my WDD131 final
+                    project. It is powered by approximately 150 lines of
+                    JavaScript across 9 functions. Pictured here are 7 of those
+                    functions collapsed.  
                 </p>
-            <img src="images/logo.png" alt="Screenshot of calculator JavaScript code" />
+            <img id="code_img" src="images/functions.png" alt="Screenshot of calculator JavaScript code" />
+                <p id="p2">
+                    Dispite being relatively simple, it takes a lot of work to
+                    make a calculator like this robust. There is much more going
+                    on behind the scenes than you'd think. Every situation has
+                    to be accounted for, from making sure that the "negate"
+                    button plays nice with subtraction opperands, to making sure
+                    that you can't type two opperands back to back, this was an
+                    excellent exercise in input validation.
+                </p>
+                <p id="p3">
+                    One of the most fun bugs I encountered was handling cases where the built in eval() function doesn't throw an error but still returns a non-integer, for example, when you divide by zero. Prior to the fix, users could interact with the characters of these error messages just as if they were characters in an expression!
+                </p>
+            <img id="bug_img" src="images/devbug.png" alt="Screenshot of the calculator displaying the result 'Infini965-8'" />
         </section>
           
     </main>
